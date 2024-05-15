@@ -1,0 +1,35 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Publish Date</th>
+    <th>Pages</th>
+    <th>Genre</th>
+    <th>Synopsis</th>
+    <th>Rating</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let book of books">
+    <td>{{ book.id }}</td>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.publishDate.toLocaleDateString("en-GB") }}</td>
+    <td>{{ book.pages }}</td>
+    <td>{{ BookGenre[book.genre] }}</td>
+    <td>{{ book.synopsis }}</td>
+    <td>{{ book.rating }}</td>
+    <td>
+      <button type="submit">Edit Book</button>
+    </td>
+    <td>
+      <button type="submit">Delete Book</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
