@@ -64,10 +64,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bookstore-web:build:production"
+              "buildTarget": "bookstore-web:build:production"
             },
             "development": {
-              "browserTarget": "bookstore-web:build:development"
+              "buildTarget": "bookstore-web:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bookstore-web:build"
+            "buildTarget": "bookstore-web:build"
           }
         },
         "test": {

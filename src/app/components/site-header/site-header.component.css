@@ -12,10 +12,25 @@
   align-items: center;
 }
 
-.left * {
-  margin-right: 25px;
+h3 {
+  margin: 5px;
 }
 
-.logo {
-  height: 65px;
+.navbar-nav {
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.nav-item {
+  margin: 5px 10px 5px 10px;
+  font-size: 20px;
+}
+
+.nav-item:hover {
+  color: #258cfb;
+}
+
+a.active {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #258cfb;
 }

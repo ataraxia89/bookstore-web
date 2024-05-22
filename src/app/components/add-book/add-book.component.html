@@ -1,0 +1,54 @@
+<div class="container">
+  <h3>Add New Book</h3>
+  <form #addForm="ngForm" (ngSubmit)="addBook()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" required #title="ngModel" [(ngModel)]="book.title"/>
+      <label class="infoTip error" *ngIf="title.invalid && title.touched">Title is required</label>
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input id="author" name="author" type="text" required #author="ngModel" [(ngModel)]="book.author"/>
+      <label class="infoTip error" *ngIf="author.invalid && author.touched">Author is required</label>
+    </div>
+    <div class="form-group">
+      <label for="publishDate">Publish Date</label>
+      <input id="publishDate" name="publishDate" type="date" required [(ngModel)]="book.publishDate" (ngModelChange)="book.publishDate = $event"/>
+    </div>
+    <div class="form-group">
+      <label for="pages">Pages</label>
+      <input id="pages" name="pages" type="number" required #pages="ngModel" [(ngModel)]="book.pages"/>
+      <label class="infoTip error" *ngIf="pages.invalid && pages.touched">Pages required</label>
+    </div>
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select id="genre" name="genre" [(ngModel)]="selectedGenre">
+        <option *ngFor="let genreId of genreIds"
+                [ngValue]="genreId">{{bookGenres[genreId]}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="synopsis">Synopsis</label>
+      <input id="synopsis" name="synopsis" type="text" required #synopsis="ngModel" [(ngModel)]="book.synopsis"/>
+      <label class="infoTip error" *ngIf="synopsis.invalid && synopsis.touched">Synopsis is required</label>
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <input id="rating" name="rating" type="number" required #rating="ngModel" [(ngModel)]="book.rating"/>
+      <label class="infoTip error" *ngIf="rating.invalid && rating.touched">Rating is required</label>
+    </div>
+    <div class="form-group">
+      <label for="isbn">ISBN</label>
+      <input id="isbn" name="isbn" type="text" required #isbn="ngModel" [(ngModel)]="book.isbn"/>
+      <label class="infoTip error" *ngIf="isbn.invalid && isbn.touched">ISBN is required</label>
+    </div>
+
+    <div>
+      <input type="submit" [disabled]="addForm.form.invalid || isSubmitting" value="Save" />
+      <label class="infoTip" *ngIf="isSubmitting">Submitting details...</label>
+    </div>
+    <div class="submissionError" *ngIf="submissionError">
+      Failed to submit book details. Please try again.
+    </div>
+  </form>
+</div>

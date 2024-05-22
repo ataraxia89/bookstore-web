@@ -1,0 +1,22 @@
+input, select {
+  margin-left: 10px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.submissionError {
+  margin: 25px 0;
+  color: red;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+}
+
+.infoTip {
+  margin-left: 15px;
+  font-style: italic;
+}
